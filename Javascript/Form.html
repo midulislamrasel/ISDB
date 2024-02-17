@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management</title>
+    <style>
+      /* Optional CSS styling */
+      .input-group {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>User Management</h2>
+    <div class="input-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" />
+    </div>
+    <div class="input-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" />
+    </div>
+    <div class="input-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" />
+    </div>
+    <div class="input-group">
+      <label for="gender">Gender:</label>
+      <select id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <button onclick="addUser()">Add User</button>
+    <div id="display-area"></div>
+
+    <script>
+      // Array to store user data
+      let users = [];
+
+      // Function to add user
+      function addUser() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const gender = document.getElementById("gender").value;
+
+        if (name !== "" && email !== "" && password !== "") {
+          const newUser = { name, email, password, gender };
+          users.push(newUser);
+          displayUsers();
+          resetForm();
+        } else {
+          alert("Please fill in all required fields");
+        }
+      }
+
+      // Function to display users
+      function displayUsers() {
+        const displayArea = document.getElementById("display-area");
+        displayArea.innerHTML = ""; // Clear display area
+        users.forEach((user, index) => {
+          const userElement = document.createElement("div");
+          userElement.innerHTML = `
+                    <strong>User ${index + 1}:</strong><br>
+                    Name: ${user.name}<br>
+                    Email: ${user.email}<br>
+                    Password: ${user.password}<br>
+                    Gender: ${user.gender}<br><br>
+                    <button onclick="editUser(${index})">Edit</button>
+                    <button onclick="deleteUser(${index})">Delete</button>`;
+          displayArea.appendChild(userElement);
+        });
+      }
+
+      // Function to reset form fields
+      function resetForm() {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+        document.getElementById("gender").value = "male"; // Reset gender to default value
+      }
+
+      // Function to edit user
+      function editUser(index) {
+        const user = users[index];
+        document.getElementById("name").value = user.name;
+        document.getElementById("email").value = user.email;
+        document.getElementById("password").value = user.password;
+        document.getElementById("gender").value = user.gender;
+        // Remove the edited user from the array
+        users.splice(index, 1);
+        displayUsers(); // Display the updated list of users
+      }
+
+      // Function to delete user
+      function deleteUser(index) {
+        users.splice(index, 1);
+        displayUsers(); // Display the updated list of users
+      }
+    </script>
+  </body>
+</html>

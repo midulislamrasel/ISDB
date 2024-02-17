@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .box {
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        gap: 20px;
+      }
+      .img_box {
+        width: 300px;
+        height: 500px;
+        background-color: rgb(238, 238, 238);
+        padding: 18px 10px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .img_box:hover {
+        background-color: rgb(218, 218, 218);
+      }
+      .img_size {
+        width: 100%;
+        height: 360px;
+        border-radius: 10px;
+        background-image: unset;
+      }
+      .img_and_title {
+        display: flex;
+        flex-direction: column;
+      }
+      button {
+        padding: 8px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(86, 108, 108);
+        color: aliceblue;
+        font-weight: 600;
+        margin-top: 5px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: rgb(122, 145, 145);
+      }
+      .card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .price {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .card {
+        /* float: righ; */
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="img_box">
+        <div>
+          <img class="img_size" src="img1.jpeg" alt="img1" />
+        </div>
+        <div class="card">
+          <div>
+            <h3>Hello Boyes</h3>
+            <button>By now</button>
+          </div>
+          <div>
+            <h4 class="price">35 $</h4>
+          </div>
+        </div>
+      </div>
+      <!-- =======IMG2==== -->
+      <div class="img_box">
+        <div>
+          <img class="img_size" src="img2.jpeg" alt="img1" />
+        </div>
+        <div class="card">
+          <div>
+            <h3>Hello Boyes</h3>
+            <button>By now</button>
+          </div>
+          <div>
+            <h4 class="price">35 $</h4>
+          </div>
+        </div>
+      </div>
+      <!-- =======IMG3===== -->
+      <div class="img_box">
+        <div>
+          <img class="img_size" src="img3.jpeg" alt="img1" />
+        </div>
+        <div class="card">
+          <div>
+            <h3>Hello Boyes</h3>
+            <button>By now</button>
+          </div>
+          <div>
+            <h4 class="price">35 $</h4>
+          </div>
+        </div>
+      </div>
+      <!-- =====IMG4======== -->
+      <div class="img_box">
+        <div>
+          <img class="img_size" src="img4.jpeg" alt="img1" />
+        </div>
+        <div class="card">
+          <div>
+            <h3>Hello Boyes</h3>
+            <button>By now</button>
+          </div>
+          <div>
+            <h4 class="price">35 $</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
