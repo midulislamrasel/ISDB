@@ -31,7 +31,9 @@
       }
       .img_size {
         width: 100%;
-        height: 360px;
+        height: 100%;
+        /* height: 360px; */
+        display: flex;
         border-radius: 10px;
         background-image: unset;
       }
@@ -66,12 +68,15 @@
         /* float: righ; */
         display: flex;
       }
+      /* .box__img {
+        height: 360px;
+      } */
     </style>
   </head>
   <body>
     <div class="box">
       <div class="img_box">
-        <div>
+        <div class="box__img">
           <img class="img_size" src="img1.jpeg" alt="img1" />
         </div>
         <div class="card">
@@ -130,5 +135,10 @@
         </div>
       </div>
     </div>
+    <br /><br /><br /><br />
+    <img src="img1.jpeg" alt="" />
+    <img src="img2.jpeg" alt="" />
+    <img src="img4.jpeg" alt="" />
+    <img src="img3.jpeg" alt="" />
   </body>
 </html>
